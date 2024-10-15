@@ -1,0 +1,10 @@
+{
+  "files.associations": {
+    "**/bin/*": "shellscript",
+    "**/bin/colortest": "perl",
+  },
+  "shellcheck.ignorePatterns": {
+    "**/config/**/*": true,
+    "**/*.zsh": true,
+  },
+}
