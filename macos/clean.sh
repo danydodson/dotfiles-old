@@ -29,5 +29,3 @@ yarn global upgrade
 __info_ ' ➡ Removing node_modules...'
 find . -name "node_modules" -type d -prune -exec rm -vrf '{}' +
 
-__info_ ' ➡ Removing .DS_Stores...'
-find . -name ".DS_Store" -type f -delete
