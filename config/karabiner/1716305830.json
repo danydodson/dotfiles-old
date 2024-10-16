@@ -1,0 +1,1 @@
+{"title":"Keyboard Brightness Adjustment","rules":[{"description":"Keyboard Brightness Adjustment","manipulators":[{"type":"basic","from":{"key_code":"f5"},"to":[{"repeat":true,"key_code":"illumination_increment"}],"to_if_held_down":[{"repeat":true,"key_code":"illumination_decrement"}]}]}]}
