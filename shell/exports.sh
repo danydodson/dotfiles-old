@@ -49,6 +49,12 @@ export YARN_CACHE_FOLDER="$XDG_CACHE_HOME/yarn"
 export RBENV_ROOT="$XDG_DATA_HOME/rbenv"
 export GNUPGHOME="$XDG_CONFIG_HOME/gnupg"
 
+# lua
+export LUAROCKS_CONFIG="$HOME/.config/lua/luarocks-5.1.lua"
+export LUA_PATH="$LUA_PATH;$HOME/.local/opt/lua/share/lua/5.1/?.lua"
+export LUA_PATH="$LUA_PATH;$HOME/.local/opt/lua/share/lua/5.1/?/init.lua"
+export LUA_CPATH="$HOME/.local/opt/lua/lib/lua/5.1/?.so"
+
 # bat, wakatime, nnn, wget, readline, less
 export BAT_CONFIG_PATH="$DOTFILES/config/bat/bat.conf"
 export WAKATIME_HOME="$XDG_CONFIG_HOME/wakatime"

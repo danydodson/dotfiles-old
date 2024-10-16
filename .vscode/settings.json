@@ -6,5 +6,5 @@
   "shellcheck.ignorePatterns": {
     "**/config/**/*": true,
     "**/*.zsh": true,
-  },
+  }
 }
