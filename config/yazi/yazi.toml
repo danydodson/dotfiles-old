@@ -1,0 +1,24 @@
+[manager]
+show_hidden = true
+sort_dir_first = true
+ratio = [1, 3, 4]
+show_symlink = true
+
+[preview]
+wrap = "no"
+
+[plugin]
+prepend_previewers = [
+	# HEIC previewer
+	{ mime = "image/heic", run = "heic" },
+]
+
+append_previewers = [
+	# My fallback previewer
+	{ name = "*" , run = "binary" },
+]
+
+prepend_preloaders = [
+	# HEIC preloader
+	{ mime = "image/heic", run = "heic" },
+]

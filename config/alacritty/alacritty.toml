@@ -51,7 +51,7 @@ opacity = 1
 dynamic_padding = true
 option_as_alt = "Both"
 decorations = "buttonless"
-padding = { x = 5, y = 5 }
+padding = { x = 0, y = 0 }
 
 [cursor]
 style = { shape = "Beam", blinking = "On" }

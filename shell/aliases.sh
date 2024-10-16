@@ -7,11 +7,9 @@ alias se='sudo -e'
 alias root='sudo -s'
 
 # coreutils
-alias cp='cp --interactive'
 alias df='df --human-readable'
 alias du='du --human-readable'
 alias ls='ls --human-readable'
-alias mv='mv --interactive'
 
 # ls
 alias ls='/opt/homebrew/bin/gls --color=auto --group-directories-first'
@@ -45,7 +43,7 @@ alias bbcheck='bb check --file="~/.dotfiles/macos/brewfile"'
 
 # dl
 alias curl='curl --silent'
-alias wget='wget --hsts-file="${HOME}/.config/wget/wget-hsts" --no-check-certificate'
+alias wget='wget --config="${HOME}/.dotfiles/config/wget/wgetrc" --no-check-certificate'
 
 # bat
 alias bat='bat --color=always'
