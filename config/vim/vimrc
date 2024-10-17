@@ -1,28 +1,29 @@
 
-" Basics ----------------------------------------------------------------
-
 set viminfo+=n~/.config/vim/viminfo
 
-filetype on
-filetype plugin on
-filetype indent on
+let mapleader =" "
+
+set term=xterm-256color
+filetype plugin indent on
 
 syntax on
 
-set number
-set expandtab
-set nobackup
-set incsearch
-set ignorecase
-set smartcase
-set showcmd
-set showmode
-set showmatch
-set hlsearch
-
 set history=1000
 
-" Status Line ------------------------------------------------------------
+set termguicolors
+
+set nobackup
+set autoread
+set relativenumber
+
+set tabstop=2
+set shiftwidth=2
+set smartindent
+set expandtab
+
+set hlsearch
+set incsearch
+set ignorecase
 
 set statusline=
 set statusline+=\ %F\ %M\ %Y\ %R
