@@ -37,16 +37,18 @@ export GOPATH="$XDG_CONFIG_HOME/go"
 export CARGO_HOME="$XDG_CONFIG_HOME/cargo"
 export RUSTUP_HOME="$XDG_CONFIG_HOME/rust"
 
-# npm, deno, yarn, pnpm, bun, ruby, fly, gpg
-export BUN_INSTALL="$XDG_CONFIG_HOME/bun"
-export PNPM_HOME="$XDG_DATA_HOME/pnpm"
+# npm
 export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
 export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR/npm"
-export FLY_CONFIG_DIR="$XDG_CONFIG_HOME/fly"
+
+# deno, yarn, pnpm, bun, ruby, fly, gnupg
+export BUN_INSTALL="$XDG_CONFIG_HOME/bun"
 export DENO_INSTALL="$XDG_CONFIG_HOME/deno"
 export YARN_CACHE_FOLDER="$XDG_CACHE_HOME/yarn"
 export RBENV_ROOT="$XDG_DATA_HOME/rbenv"
+export PNPM_HOME="$XDG_DATA_HOME/pnpm"
+export FLY_CONFIG_DIR="$XDG_CONFIG_HOME/fly"
 export GNUPGHOME="$XDG_CONFIG_HOME/gnupg"
 
 # lua
@@ -55,11 +57,11 @@ export LUA_PATH="$LUA_PATH;$HOME/.local/opt/lua/share/lua/5.1/?.lua"
 export LUA_PATH="$LUA_PATH;$HOME/.local/opt/lua/share/lua/5.1/?/init.lua"
 export LUA_CPATH="$HOME/.local/opt/lua/lib/lua/5.1/?.so"
 
-# bat, wakatime, nnn, wget, readline, less
+# bat, wakatime, wget, readline
 export BAT_CONFIG_PATH="$DOTFILES/config/bat/bat.conf"
 export WAKATIME_HOME="$XDG_CONFIG_HOME/wakatime"
-export WGETRC="${XDG_CONFIG_HOME}/wget/wgetrc"
-export INPUTRC="${XDG_CONFIG_HOME}/readline/inputrc"
+export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
+export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
 
 # python, pyenv
 export PYENV_ROOT="$XDG_CONFIG_HOME/pyenv"

@@ -81,6 +81,9 @@ export FZF_ALT_C_OPTS="\
   --walker=dir,hidden,follow \
   --preview 'tree -C {} | head -200'"
 
+# magick
+export DYLD_LIBRARY_PATH="opt/homebrew/lib:$DYLD_LIBRARY_PATH"
+
 # zsh -> completion options
 autoload -U compinit && compinit
 
