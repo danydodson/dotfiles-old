@@ -1,8 +1,8 @@
 # gitconfig
 
 [user]
-  name = danydodson
-  email = danydodson@gmail.com
+  name = "danydodson"
+  email ="danydodson@gmail.com"
 
 [includeIf "gitdir:/Users/"]
 	path = "~/.config/git/secret"
