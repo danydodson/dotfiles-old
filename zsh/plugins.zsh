@@ -1,7 +1,13 @@
 #!/bin/zsh
 
 # omz plugins
-plugins+=(brew git pnpm-shell-completion zsh-syntax-highlighting zsh-history-substring-search)
+plugins+=(
+  brew
+  git
+  pnpm-shell-completion
+  zsh-syntax-highlighting
+  zsh-history-substring-search
+)
 
 # extra zsh completions
 source ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/zsh-completions.plugin.zsh

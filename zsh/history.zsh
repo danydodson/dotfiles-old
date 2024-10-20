@@ -1,11 +1,11 @@
 #!/bin/zsh
 
-export HISTSIZE=1000000000
-export SAVEHIST=$HISTSIZE
-
+mkdir -p $HOME/.cache/zsh
 export HISTFILE="$HOME/.config/cache/zsh/zsh_history"
 export LESSHISTFILE="$HOME/.config/cache/less/lesshst"
 export LESSKEYIN="$HOME/.config/cache/less/lesskey"
+export HISTSIZE=1000000000
+export SAVEHIST=$HISTSIZE
 
 setopt APPEND_HISTORY
 setopt EXTENDED_HISTORY
