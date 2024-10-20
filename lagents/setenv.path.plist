@@ -3,13 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>Label</key>
-	<string>setenv.gnupghome</string>
+	<string>setenv.path</string>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/bin/launchctl</string>
-		<string>setenv</string>
-		<string>PATH</string>
-		<string>PATH</string>
+		<string>sh</string>
+		<string>-c</string>
+		<string>
+		launchctl setenv GNUPGHOME /Users/dany/.config/gnupg
+    launchctl setenv PATH $PATH:/Users/dany/.config/gnupg
+		</string>
 	</array>
 	<key>RunAtLoad</key>
 	<true/>
