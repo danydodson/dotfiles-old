@@ -2,6 +2,8 @@
 
 export DOTFILES="${HOME}"/.dotfiles
 
+skip_global_compinit=1
+
 source "${DOTFILES}"/shell/functions.sh
 source "${DOTFILES}"/shell/exports.sh
 source "${DOTFILES}"/zsh/prompt.zsh
@@ -11,3 +13,4 @@ source "${DOTFILES}"/zsh/history.zsh
 source "${DOTFILES}"/zsh/settings.zsh
 source "${DOTFILES}"/zsh/comps.zsh
 source "${DOTFILES}"/shell/aliases.sh
+

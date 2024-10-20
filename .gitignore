@@ -3,6 +3,6 @@
 Brewfile.lock.json
 Icon
 .DS_Store
-._*
 *.env
 *.log
+*.2

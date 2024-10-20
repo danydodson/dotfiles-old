@@ -1,11 +1,16 @@
 #!/usr/bin/env bash
 
-function dots() {
-  cd ~/.dotfiles/ && nvim
+dots() {
+  cd ~/.dotfiles/ && nvim .
 }
 
-function nvconf() {
-  cd ~/.config/nvim/ && nvim
+nvconf() {
+  cd ~/.config/nvim/ && nvim .
+}
+
+batman() {
+  BAT_THEME="OneHalfDark" command batman "$@"
+  return $?
 }
 
 function ipv4() {
@@ -16,16 +21,16 @@ function ipv6() {
   dig -6 @resolver1.opendns.com myip.opendns.com AAAA +short
 }
 
-function battail() {
-  tail -n "+$1" "$3" | head -n "$(($2 - $1 + 1))"
-}
-
-function rmdss() {
-  find . -name ".DS_Store" -type f -delete
-}
-
 function copy() {
   printf "%s" "$*" | tr -d "\n" | pbcopy
+}
+
+function yabai_error() {
+  btail -f /tmp/yabai_"$USER"\.err.log
+}
+
+function yabai_debug() {
+  tail -f /tmp/yabai_"$USER"\.out.log
 }
 
 function randpass() {
@@ -33,23 +38,25 @@ function randpass() {
   openssl rand -base64 256 | tr -d '\n/+=' | cut -c -"$len"
 }
 
-# vf -> find and open a file in nvim
-function vf() {
-  if [[ $# -eq 0 ]]; then
-    fd -t f | fzf --header "Open File in nvim" --walker-skip=.git,node_modules,target,Library,Pictures,Documents,Music,.Trash --ansi --no-bold --preview "bat --color=always {}" | xargs nvim
+function clipboard() {
+  if [ -t 0 ]; then
+    pbpaste
   else
-    fd -t f | fzf --header "Open File in nvim" --walker-skip=.git,node_modules,target,Library,Pictures,Documents,Music,.Trash --ansi --no-bold --preview "bat --color=always {}" -q "$@" | xargs nvim
+    pbcopy
   fi
 }
 
-zle -N vf vf
-bindkey "^[v" vf
+# # vf -> find and open a file in nvim
+# function vf() {
+#   if [[ $# -eq 0 ]]; then
+#     fd -t f | fzf --header "Open File in nvim" --walker-skip=.git,node_modules,target,Library,Pictures,Documents,Music,.Trash --ansi --no-bold --preview "bat --color=always {}" | xargs nvim
+#   else
+#     fd -t f | fzf --header "Open File in nvim" --walker-skip=.git,node_modules,target,Library,Pictures,Documents,Music,.Trash --ansi --no-bold --preview "bat --color=always {}" -q "$@" | xargs nvim
+#   fi
+# }
 
-# batman -> bat with theme
-function batman() {
-  BAT_THEME="Monokai Extended" command batman "$@"
-  return $?
-}
+# zle -N vf vf
+# bindkey "^[v" vf
 
 # __my_op_plugin_run -> fixes op completion
 function __my_op_plugin_run() {

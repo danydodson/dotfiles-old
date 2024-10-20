@@ -1,42 +1,36 @@
 #!/bin/zsh
 
-# oh-my-zsh -> plugins
+# omz plugins
 plugins+=(brew git pnpm-shell-completion zsh-syntax-highlighting zsh-history-substring-search)
 
-# oh-my-zsh -> my-zsh-completions
-source $HOME/.config/omz/custom/plugins/my-zsh-completions/zsh-completions.plugin.zsh
+# extra zsh completions
+source ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/zsh-completions.plugin.zsh
+source ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions-zchee/zsh-completions.plugin.zsh
 
-# oh-my-zsh -> source
+# source omz
 source $HOME/.config/omz/oh-my-zsh.sh
 
-# add colors to ls command
+# add colors
 if [ -f "/opt/homebrew/bin/gdircolors" ]; then
   eval "$(gdircolors -b "${DOTFILES}"/config/dircolors/dircolors)"
 fi
 
-# iterm2 -> loads shell integration
-test -e $HOME/.config/zsh/.iterm2_shell_integration.zsh && source $HOME/.config/zsh/.iterm2_shell_integration.zsh || true
+# start ssh-agent
+eval "$(ssh-agent -s)" >/dev/null 2>&1
 
-# op -> load completions
+# load op
 eval "$(op completion zsh)"
 eval "$(__load_op_completion)"
 compdef _op op
 
-# gh -> load completions
-eval "$(gh copilot alias -- zsh)"
-
-# start the ssh-agent
-eval "$(ssh-agent -s)" >/dev/null 2>&1
-
-# cargo -> load env
+# load cargo
 [[ ! -f $HOME/.config/cargo/env ]] || . $HOME/.config/cargo/env
 
-# pyenv -> load pyenv
+# load pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
-
-# atuin -> shell history
+# shell history
 eval "$(atuin init zsh)"
 
 # fzf -> get completions
@@ -84,10 +78,12 @@ export FZF_ALT_C_OPTS="\
 # magick
 export DYLD_LIBRARY_PATH="opt/homebrew/lib:$DYLD_LIBRARY_PATH"
 
+# load iterm shell integration
+test -e $HOME/.config/zsh/.iterm2_shell_integration.zsh && source $HOME/.config/zsh/.iterm2_shell_integration.zsh || true
+
 # zsh -> completion options
 autoload -U compinit && compinit
 
 # de-dupe $PATH
 typeset -U path
 typeset -U fpath
-

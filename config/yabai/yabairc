@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -x
+# set -x
 
 # yabai signals
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
@@ -8,6 +8,7 @@ sudo yabai --load-sa
 
 # global settings
 yabai -m config layout bsp
+yabai -m config debug_output on
 yabai -m config external_bar all:0:0
 yabai -m config top_padding 5
 yabai -m config bottom_padding 6
@@ -24,7 +25,7 @@ yabai -m config mouse_modifier fn
 yabai -m config mouse_action1 move
 yabai -m config mouse_action2 resize
 yabai -m config mouse_drop_action swap
-yabai -m config mouse_follows_focus off
+yabai -m config mouse_follows_focus on
 yabai -m config focus_follows_mouse off
 
 # window rules
@@ -38,6 +39,7 @@ yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^Apparency$" manage=off
 yabai -m rule --add app="^App Store$" manage=off
 yabai -m rule --add app="^Alfred$" manage=off
+yabai -m rule --add app="^Better Display$" manage=off
 yabai -m rule --add app="^Bluetooth Inspector$" manage=off
 yabai -m rule --add app="^choose$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
@@ -61,7 +63,6 @@ yabai -m rule --add app="^GIMP$" manage=off
 yabai -m rule --add app="^Go Recipes$" manage=off
 yabai -m rule --add app="^IINA$" manage=off
 yabai -m rule --add app="^Instagram$" manage=off
-# yabai -m rule --add app="^iTerm$" manage=off
 yabai -m rule --add app="^iPhone Mirroring$" manage=off
 yabai -m rule --add app="^System Designer$" manage=off
 yabai -m rule --add app="^JavaScript Recipes$" manage=off
@@ -96,6 +97,7 @@ yabai -m rule --add app="^Qutebrowser$" manage=off
 yabai -m rule --add app="^RiseupVPN$" manage=off
 yabai -m rule --add app="^Software Update$" manage=off
 yabai -m rule --add app="^Spotify$" manage=off
+yabai -m rule --add app="^Shortcuts$" manage=off
 yabai -m rule --add app="^Stack Wallet$" manage=off
 yabai -m rule --add app="^Source$" manage=off
 yabai -m rule --add app="^Secure ShellFish$" manage=off
@@ -113,6 +115,6 @@ yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^System Information$" manage=off sub-layer=above
 yabai -m rule --add app="^System Preferences$" manage=off sub-layer=above
 
-set +x
+# set +x
 
 printf '%s' "$(date '+%F %T%z') yabai configuration loaded...\\n"
